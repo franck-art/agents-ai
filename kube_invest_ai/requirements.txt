@@ -1,0 +1,7 @@
+crewai
+litellm
+kubernetes
+pyyaml
+python-dotenv
+fastapi
+apscheduler

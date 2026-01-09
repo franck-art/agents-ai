@@ -1,0 +1,27 @@
+eleve1_task:
+  description: >
+    Repondre aux questions de culture générale posée. La question sera: {question}
+  expected_output: >
+    une reponse claire, simple et concise et surtout pourquoi tu as choisi cette reponse.
+  agent: eleve1
+
+eleve2_task:
+  description: >
+    Repondre aux questions de culture générale posée. La question sera: {question}
+  expected_output: >
+    une reponse claire, simple et concise et surtout pourquoi tu as choisi cette reponse.
+  agent: eleve2
+
+prof_task:
+  description: >
+    Corrige les réponses des élèves. La question est : {question}.
+    Réponse de l'élève 1 :
+      {eleve1_task.output}
+    Réponse de l'élève 2 :
+      {eleve2_task.output}
+  expected_output: >
+    Réponse correcte et évaluation des élèves et surtout pourquoi tu as choisi cette reponse.
+  agent: professeur
+  context:
+    - eleve1_task
+    - eleve2_task

@@ -1,0 +1,18 @@
+analyze_task:
+  description: >
+    Analyze logs , events and identify the root cause of the errors or anomalies.
+    Incident or Logs:
+    {incident}
+  expected_output: >
+    A root cause analysis of the errors detected by the observer.
+  agent: analyst
+
+report_task:
+  description: >
+    Generate a structured incident report.
+    Incident: {incident}, Root Cause: {analyze_task.output}
+  expected_output: >
+    A structured report with severity, logs, and just a clear recommendations. 
+  agent: reporter
+  context:
+    - analyze_task
